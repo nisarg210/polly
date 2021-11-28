@@ -81,7 +81,26 @@ export default function CreateRoom({ history }: RouteComponentProps) {
           ></input>
 
                     </div>
-
+                    <div className="row px-3"> <label className="mb-1">
+                      <h6 className="mb-0 text-sm">Choose Template</h6>
+                    </label>
+                    <div style={{width: "100%"}}>
+                    <div style={{float: "left"}}>
+                    <div className="btn" style={{margin: "5px", backgroundColor: "green", color: "white"}}>Corporate</div>
+                      </div>
+                      <div style={{float: "left"}}>
+                    <div className="btn" style={{margin: "5px", backgroundColor: "#d63384", color: "white"}}>Birthday</div>
+                      </div>
+                      <div style={{float: "left"}}>
+                    <div className="btn" style={{margin: "5px", backgroundColor: "orange", color: "white"}}>Family Fun</div>
+                      </div>
+                      <div style={{float: "left"}}>
+                    <div className="btn" style={{margin: "5px", backgroundColor: "red", color: "white"}}>Trivia</div>
+                      </div>
+                      </div>
+                    <br/>
+                    <br/>
+                    </div>
                  {/*
                   <div className="row mb-3 px-3"> <button type="submit" className="btn btn-blue text-center">Login</button> </div>
                  */}  
