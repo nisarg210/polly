@@ -7,8 +7,9 @@ import { RouteComponentProps } from 'react-router'
 import '../assets/styles/loader.css'
 
 export default function CreateRoom({ history }: RouteComponentProps) {
-  const { setHostId, name, setName, title, setTitle, setRoomId, setRoomKey, isLoading, setIsLoading } =
+  const { setHostId, name, setName, title, setTitle, setTemplate, setRoomId, setRoomKey, isLoading, setIsLoading } =
     useContext(AppContext)
+    }
   return (
     <>
 
@@ -81,7 +82,33 @@ export default function CreateRoom({ history }: RouteComponentProps) {
           ></input>
 
                     </div>
-
+                    <div className="row px-3"> <label className="mb-1">
+                      <h6 className="mb-0 text-sm">Choose Template</h6>
+                    </label>
+                    <div style={{width: "100%"}}>
+                    <div style={{float: "left"}}>
+                    <div 
+                    onClick={async () => {
+                      setIsLoading(true);
+                      try { 
+                        setTemplate("Corporate")}
+                      catch (error) {console.log(error);}
+                      finally { setIsLoading(false); }
+                        }} className="btn" style={{margin: "5px", backgroundColor: "green", color: "white"}}>Corporate</div>
+                      </div>
+                      <div style={{float: "left"}}>
+                    <div className="btn" style={{margin: "5px", backgroundColor: "#d63384", color: "white"}}>Birthday</div>
+                      </div>
+                      <div style={{float: "left"}}>
+                    <div className="btn" style={{margin: "5px", backgroundColor: "orange", color: "white"}}>Family Fun</div>
+                      </div>
+                      <div style={{float: "left"}}>
+                    <div className="btn" style={{margin: "5px", backgroundColor: "red", color: "white"}}>Trivia</div>
+                      </div>
+                      </div>
+                    <br/>
+                    <br/>
+                    </div>
                  {/*
                   <div className="row mb-3 px-3"> <button type="submit" className="btn btn-blue text-center">Login</button> </div>
                  */}  

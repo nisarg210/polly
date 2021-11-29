@@ -26,6 +26,8 @@ export interface IContext {
   setQuestionData: Dispatch<SetStateAction<IQuestionData>>;
   isLoading: boolean;
   setIsLoading: Dispatch<SetStateAction<boolean>>;
+  template: string;
+  setTemplate: Dispatch<SetStateAction<string>>;
 }
 
 // @ts-ignore
