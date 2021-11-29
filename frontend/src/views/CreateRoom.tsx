@@ -7,9 +7,9 @@ import { RouteComponentProps } from 'react-router'
 import '../assets/styles/loader.css'
 
 export default function CreateRoom({ history }: RouteComponentProps) {
-  const { setHostId, name, setName, title, setTitle, setTemplate, setRoomId, setRoomKey, isLoading, setIsLoading } =
+  const { setHostId, name, setName, title, setTitle, setRoomId, setRoomKey, isLoading, setIsLoading } =
     useContext(AppContext)
-    }
+    
   return (
     <>
 
@@ -88,13 +88,14 @@ export default function CreateRoom({ history }: RouteComponentProps) {
                     <div style={{width: "100%"}}>
                     <div style={{float: "left"}}>
                     <div 
-                    onClick={async () => {
-                      setIsLoading(true);
-                      try { 
-                        setTemplate("Corporate")}
-                      catch (error) {console.log(error);}
-                      finally { setIsLoading(false); }
-                        }} className="btn" style={{margin: "5px", backgroundColor: "green", color: "white"}}>Corporate</div>
+                    // onClick={async () => {
+                      // setIsLoading(true);
+                      // try { 
+                      //   setTemplate("Corporate")}
+                      // catch (error) {console.log(error);}
+                      // finally { setIsLoading(false); }
+                      //   }} 
+                        className="btn" style={{margin: "5px", backgroundColor: "green", color: "white"}}>Corporate</div>
                       </div>
                       <div style={{float: "left"}}>
                     <div className="btn" style={{margin: "5px", backgroundColor: "#d63384", color: "white"}}>Birthday</div>

@@ -26,8 +26,8 @@ export interface IContext {
   setQuestionData: Dispatch<SetStateAction<IQuestionData>>;
   isLoading: boolean;
   setIsLoading: Dispatch<SetStateAction<boolean>>;
-  template: string;
-  setTemplate: Dispatch<SetStateAction<string>>;
+  // template: string;
+  // setTemplate: Dispatch<SetStateAction<string>>;
 }
 
 // @ts-ignore
@@ -67,7 +67,9 @@ export default function App({ children }: Props) {
         questionData,
         setQuestionData,
         isLoading,
-        setIsLoading
+        setIsLoading,
+        // template,
+        // setTemplate
       }}
     >
       {children}
