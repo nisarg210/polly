@@ -7,9 +7,14 @@ import { RouteComponentProps } from 'react-router'
 import '../assets/styles/loader.css'
 
 export default function CreateRoom({ history }: RouteComponentProps) {
+  const [template, setTemplate] = useState(0)
   const { setHostId, name, setName, title, setTitle, setRoomId, setRoomKey, isLoading, setIsLoading } =
     useContext(AppContext)
-    
+
+    function setBGImage(index: number){
+      setTemplate(index)
+      localStorage.setItem('template', ""+index+"");
+    }
   return (
     <>
 
@@ -36,7 +41,7 @@ export default function CreateRoom({ history }: RouteComponentProps) {
                         <div className="row">
                         <img
     
-    src={require('assets/img/poll.jpg').default}
+    src={require(`assets/img/${template}.jpg`).default}
     alt='...'
   />  </div>
                         <div className="row px-3 justify-content-center mt-4 mb-5 border-line"> </div>
@@ -85,16 +90,16 @@ export default function CreateRoom({ history }: RouteComponentProps) {
                     <div className="row px-3"> <label className="mb-1">
                       <h6 className="mb-0 text-sm">Choose Template</h6>
                     </label>
-                    <div style={{width: "100%"}}>
+                    {/* <div style={{width: "100%"}}>
                     <div style={{float: "left"}}>
                     <div 
                     // onClick={async () => {
-                      // setIsLoading(true);
-                      // try { 
-                      //   setTemplate("Corporate")}
-                      // catch (error) {console.log(error);}
-                      // finally { setIsLoading(false); }
-                      //   }} 
+                    //   setIsLoading(true);
+                    //   try { 
+                    //     setTemplate("Corporate")}
+                    //   catch (error) {console.log(error);}
+                    //   finally { setIsLoading(false); }
+                        // }} 
                         className="btn" style={{margin: "5px", backgroundColor: "green", color: "white"}}>Corporate</div>
                       </div>
                       <div style={{float: "left"}}>
@@ -106,7 +111,23 @@ export default function CreateRoom({ history }: RouteComponentProps) {
                       <div style={{float: "left"}}>
                     <div className="btn" style={{margin: "5px", backgroundColor: "red", color: "white"}}>Trivia</div>
                       </div>
+                      </div> */}
+                     <div style={{width: "100%"}}>
+                     <div style={{float: "left"}}>
+                       <input type="radio" value="Corporate" name="template" onClick={()=>setBGImage(1)}/>
+                       <div className="btn" style={{margin: "5px", backgroundColor: "green", color: "white"}}>Corporate
                       </div>
+                      <input type="radio" value="Birthday" name="template" onClick={()=>setBGImage(2)}/>
+                      <div className="btn" style={{margin: "5px", backgroundColor: "#d63384", color: "white"}}>Birthday
+                      </div>
+                      <input type="radio" value="Birthday" name="template" onClick={()=>setBGImage(3)}/>
+                      <div className="btn" style={{margin: "5px", backgroundColor: "orange", color: "white"}}>Family Fun
+                      </div>
+                      <input type="radio" value="Birthday" name="template" onClick={()=>setBGImage(4)}/>
+                      <div className="btn" style={{margin: "5px", backgroundColor: "red", color: "white"}}>Trivia
+                      </div>
+                       </div>
+                        </div>
                     <br/>
                     <br/>
                     </div>

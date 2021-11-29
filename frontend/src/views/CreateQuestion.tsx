@@ -10,7 +10,7 @@ export default function CreateQuestion({ history }: RouteComponentProps) {
   const [correctAnswer, setCorrect] = useState(0)
   const [options, setOptions] = useState(['', '', '', ''])
   const { roomId, isLoading, setIsLoading } = useContext(AppContext)
-
+  var template = localStorage.getItem('template') || 'default';
   function setCorrectAnswer(index: number){
     setCorrect(index)
   }
@@ -166,7 +166,7 @@ export default function CreateQuestion({ history }: RouteComponentProps) {
                         <div className="row">
                         <img
     
-    src={require('assets/img/pattern_react.png').default}
+    src={require(`assets/img/${template+template}.jpg`).default}
     alt='...'
   />  </div>
                         <div className="row px-3 justify-content-center mt-4 mb-5 border-line"> </div>
