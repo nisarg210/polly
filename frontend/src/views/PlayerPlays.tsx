@@ -22,7 +22,7 @@ export default function PlayerPlays() {
       setQuestionData(data.questionData)
     }
     useEffect(() => {
-        setInterval(async () => await refreshQuestionData(), 5000);
+        setInterval(async () => await refreshQuestionData(), 50000);
     },[])
 
   const playerQuestions =
@@ -68,9 +68,6 @@ export default function PlayerPlays() {
     <>
 
 
-
-
-
 <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div className="container px-5">
                     <a className="navbar-brand" href="/">PollMe</a>
@@ -100,6 +97,7 @@ export default function PlayerPlays() {
       ) : (
         <span></span>
       )}
+      <div> </div>
                         </div>
                     </div>
                 </div>
