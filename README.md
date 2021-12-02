@@ -74,8 +74,7 @@ https://user-images.githubusercontent.com/26930183/142039379-9dd1fece-f0f4-45e4-
 <h1> 📹 Project Video P3 </h1>
 
 
-https://app.animaker.com/video/AWNYIECFO2XW1HQP
-
+https://github.com/apurva-s/polly/blob/main/Advertisement%20video%20project%203.mp4
 
 
 <h1> 📐 Architecture </h1>
