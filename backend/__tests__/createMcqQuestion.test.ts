@@ -93,6 +93,21 @@ test('create question with invalid playerId', async () => {
   'd'],1, prisma)).rejects.toThrowError();
 })
 
+test('create question with invalid playerId', async () => {
+  await expect( createMcqQuestionCore('????', roomId, 'foo question', ['a', 'b', 'c', 
+  'd'],1, prisma)).rejects.toThrowError();
+})
+
+test('create question with invalid playerId', async () => {
+  await expect( createMcqQuestionCore(hostPlayerId, roomId, '', ['a', 'b', 'c', 
+  'd'],1, prisma)).rejects.toThrowError();
+})
+
+
+test('create question with invalid playerId', async () => {
+  await expect( createMcqQuestionCore(hostPlayerId, roomId, 'foo question', [],1, prisma)).rejects.toThrowError();
+})
+
 test('create question from player who is not the host', async () => {
   await expect(createMcqQuestionCore(otherPlayerId, roomId, 'foo question', ['a', 'b', 'c', 
   'd'],1, prisma)).rejects.toThrowError()
