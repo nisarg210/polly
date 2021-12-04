@@ -58,7 +58,7 @@ const serverlessConfiguration: AWS = {
       ]
     },
     createMCQQuestion: {
-      handler: 'src/createMCQQuestion.andler',
+      handler: 'src/createMCQQuestion.handler',
       events: [
         {
           http: {
