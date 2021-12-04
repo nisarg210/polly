@@ -1,9 +1,10 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+  //url      = env("DATABASE_URL")
 datasource db {
   provider = "postgres"
-  url      = env("DATABASE_URL")
+  url = postgres://pwsobkvnqkhtom:cf359361c40657536b98a815aebbfe3b7bd3189737a77973bb3ecc5b049c3edf@ec2-54-145-139-208.compute-1.amazonaws.com:5432/d4u7vm8s630ih6
 }
 
 generator client {
