@@ -10,7 +10,7 @@ import createNewRoom from "../util/createNewRoom";
 import {createMcqQuestion} from "../util/createMcqQuestion";
 import {loginuser} from "../util/loginuser"
 export default function LoginUser(){
-      const { user, password } = useState('')
+
     useContext(AppContext)
       return (
           <>
@@ -47,9 +47,7 @@ export default function LoginUser(){
                               type='text'
                               className='mb-4'
                               placeholder='Enter username..'
-                              onChange={(event) => {
-                                user(event.target.value)
-                              }}
+
                         />
                     </div>
                   <div className="row px-3">
@@ -58,9 +56,7 @@ export default function LoginUser(){
                               type='password'
                               className='mb-4'
                               placeholder='Enter password..'
-                              onChange={(event) => {
-                                password(event.target.value)
-                              }}
+
                         />
                     </div>
 
@@ -71,30 +67,11 @@ export default function LoginUser(){
 
                     <div className='row mb-3 px-3'>
 
-               (
               <div
-              className="get-started btn btn-primary btn-lg px-4 me-sm-3 hover:shadow-lg ease-linear transition-all duration-150"              onClick={async () => {
-
-                  try {
-                    const res = await loginuser({
-                        user,
-                        password,
-                    })
-                    console.log(res)
-
-                    history.push('/admin-dashboard')
-                  } catch (error) {
-                    console.log(error);
-
-                  }
-
-                  setIsLoading(false);
-
-                }}
-              >
+              className="get-started btn btn-primary btn-lg px-4 me-sm-3 hover:shadow-lg ease-linear transition-all duration-150" >
                 Login
               </div>
-            )
+
                     </div>
 
                 </div>
