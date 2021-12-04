@@ -157,10 +157,10 @@ let prisma: PrismaClient<
 >
 
 // Player ID of the host user
-let hostPlayerId: string | undefined;
+let hostPlayerId: string;
 // Player ID of user who is not a host
-let otherPlayerId: string | undefined;
-let roomId: string | undefined;
+let otherPlayerId: string;
+let roomId: string;
 
 beforeAll(async () => {
   // Initialize db connection
