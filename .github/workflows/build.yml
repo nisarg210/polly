@@ -2,7 +2,7 @@ name: build
 on:
   push:
     paths:
-      - 'backend/**'
+      - 'polly/**'
       - '.github/workflows/**'
     branches:
       - main
