@@ -2,6 +2,7 @@ import { Prisma, PrismaClient } from '@prisma/client'
 import { createMcqQuestionCore } from '../src/utils/createMcqQuestionCore'
 import { createRoomCore } from '../src/utils/createRoomCore'
 
+//Checking for test cases
 // Add custom matcher to namespace to avoid TS errors
 declare global {
   namespace jest {
