@@ -19,7 +19,7 @@ const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayPro
   const {question, options: _options} = await createMcqQuestionCore(playerId, roomId, title, options, correctAnswer);
   
   await prisma.$disconnect();
-
+  //Checking workflow
   // TODO! Notify room players about question
 
   return {
