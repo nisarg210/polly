@@ -15,7 +15,7 @@
 [![build](https://github.com/hetthakkar/polly/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/hetthakkar/polly/actions/workflows/build.yml)
 [![DOI](https://zenodo.org/badge/403373361.svg)](https://zenodo.org/badge/latestdoi/403373361)
 [![Docker](https://img.shields.io/badge/Containerized-Docker-blue)](https://docs.docker.com/compose/)
-[![Coverage Status](https://img.shields.io/badge/coverage-91%25-brightgreen)](https://coveralls.io/github/shahrk/polly?branch=main)
+[![Coverage Status](https://img.shields.io/badge/coverage-91%25-brightgreen)](https://coveralls.io/github/apurva-s/polly?branch=main)
 ![lines of code](https://tokei.rs/b1/github/shahrk/polly?color=ff69b4&label=Lines%20of%20Code&style=flat-square)
 [![Known Vulnerabilities](https://img.shields.io/badge/vulnerabilities-0-brightgreen)](https://app.snyk.io/org/shahrk/project/4e0a290f-50af-4ab4-9941-c3a7f4d8bea6)
     
