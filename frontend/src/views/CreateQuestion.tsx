@@ -46,12 +46,18 @@ export default function CreateQuestion({ history }: RouteComponentProps) {
                  <div className="card2 card border-0 px-4 py-5">
                     <div className="row mb-4 px-3">
                         <h3 className="mb-0 mr-4 mt-2">Create Your Question</h3>
+                        <p className="mb-0 text-sm">
+                          So, it's question-making time! Just type you question prompt in the box and list the possible options!
+                        </p>
                     </div>
                     <div className="row px-3 mb-4">
                         <div className="line"></div>
                     </div>
                     <div className="row px-3">
                        <label className="mb-1"><h4 className="mb-0 text-sm">Question Title</h4></label>
+                       <p>
+                         Let's first come up with a clear and consise question prompt for our pollers!
+                       </p>
                         <input
                               type='text'
                               className='mb-4'
@@ -63,8 +69,11 @@ export default function CreateQuestion({ history }: RouteComponentProps) {
                     </div>
                 
                     <div className="row px-3"> 
-                    <label className="mb-1"><h4 className="mb-0 text-sm">Possible Options</h4> </label> 
-
+                    <label className="mb-1"><h4 className="mb-0 text-sm">Possible Options</h4>
+                     </label> 
+                     <p>
+                       Now, we will decide the options to be given to our pollers.
+                     </p>
             <input
               type='text'
               className='mb-4'
@@ -89,6 +98,14 @@ export default function CreateQuestion({ history }: RouteComponentProps) {
               placeholder='d) Define an answer..'
               onChange={(e) => setOptionIndex(e.target.value, 3)}
             /> 
+
+            <label className="mb-1"><h4 className="mb-0 text-sm">Choose the correct answer</h4>
+            <p>
+              Please tick the correct option from the ones you just entered. <br/>
+              This will be used to provide feedback to your pollers!
+            </p>
+            </label>
+
             <span> 
               a)&nbsp;
               <input
@@ -119,7 +136,7 @@ export default function CreateQuestion({ history }: RouteComponentProps) {
               onClick={()=>setCorrectAnswer(3)}
               />
             </span>
-
+            <br/> <br/>
                     </div>
 
                  {/*
