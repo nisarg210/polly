@@ -22,7 +22,8 @@ export function checkAuth(input: checkAuthInput = {blockExecution: false}): Midd
       }
 
       try {
-        const { playerId } = jwt.verify(token, process.env['JWT_SECRET']!) as JwtPayload;
+        //const { playerId } = jwt.verify(token, process.env['JWT_SECRET']!) as JwtPayload;
+        const { playerId } = jwt.verify(token, 'secret') as JwtPayload;
         handler.event.body['playerId'] = playerId;
       } catch (error) {
         console.log(error);
