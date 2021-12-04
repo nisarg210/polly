@@ -99,5 +99,5 @@ test('enter room with empty playerId', async () => {
 })
 
 test('create question with empty roomKey', async () => {
-  await expect(enterRoomCore(playerId, 'foo', undefined, prisma)).rejects.toThrowError();
+  await expect(enterRoomCore(playerId, 'foo', '', prisma)).rejects.toThrowError();
 })
