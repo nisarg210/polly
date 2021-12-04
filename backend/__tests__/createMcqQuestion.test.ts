@@ -120,5 +120,5 @@ test('create question with empty question title', async () => {
 })
 
 test('create question with empty options', async () => {
-  await expect(createMcqQuestionCore(hostPlayerId, roomId, 'foo title', undefined,1, prisma)).rejects.toThrowError()
+  await expect(createMcqQuestionCore(hostPlayerId, roomId, 'foo title', '',1, prisma)).rejects.toThrowError()
 })
