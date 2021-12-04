@@ -68,9 +68,9 @@ test('valid params invalid userId', async () => {
 })
 
 test('valid params empty name', async () => {
-  await expect(createRoomCore(undefined, undefined, "foo bar")).rejects.toThrowError();
+  await expect(createRoomCore('', '', "foo bar")).rejects.toThrowError();
 })
 
 test('valid params empty room title', async () => {
-  await expect(createRoomCore(undefined, 'foo', undefined)).rejects.toThrowError();
+  await expect(createRoomCore('', 'foo', '')).rejects.toThrowError();
 })
