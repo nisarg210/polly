@@ -174,9 +174,9 @@ beforeAll(async () => {
     }
   })
 
-  roomId = res.room.id;
-  hostPlayerId = id;
-  otherPlayerId = pid;
+  roomId = res.room.id!;
+  hostPlayerId = id!;
+  otherPlayerId = pid!;
 
 })
 
