@@ -11,7 +11,7 @@ import PlayerResults from './views/PlayerResults'
 import Index from './views/Index';
 import AdminDashboard from './views/AdminDashboard';
 import axios from 'axios';
-
+import LoginUser from "./views/LoginUser";
 
 axios.interceptors.request.use((config) => {
   const token = localStorage.getItem('AUTH_TOKEN');
@@ -34,6 +34,7 @@ ReactDOM.render(
         <Route path="/enter-room" component={EnterRoom} />
         <Route path="/player-plays" component={PlayerPlays} />
         <Route path="/player-results" component={PlayerResults} />
+        <Route path="/login-user" component={LoginUser} />
         <Route path="/" exact component={Index} />
         {/* add redirect for first page */}
         <Redirect from="*" to="/" />
