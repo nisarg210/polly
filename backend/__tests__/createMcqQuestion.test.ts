@@ -119,11 +119,24 @@ test('create question with empty question title', async () => {
   ).rejects.toThrowError();
 });
 
-test('create question with empty question title', async () => {
+test('create question with empty question title and options', async () => {
   await expect(
     createMcqQuestionCore(
       hostPlayerId,
       roomId,
+      undefined,
+      undefined,
+      1,
+      prisma
+    )
+  ).rejects.toThrowError();
+});
+
+test('create question with empty question room,title, and options', async () => {
+  await expect(
+    createMcqQuestionCore(
+      hostPlayerId,
+      undefined,
       undefined,
       undefined,
       1,
