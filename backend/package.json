@@ -42,7 +42,7 @@
     "postinstall": "npx prisma generate",
     "compile": "tsc",
     "prepare": "npm run compile",
-    "pretest": "npm run compile",
+    "pretest": "npm run compile"
   },
   "keywords": [],
   "author": "",
