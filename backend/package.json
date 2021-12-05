@@ -40,13 +40,9 @@
   "scripts": {
     "test": "jest --maxWorkers 1",
     "postinstall": "npx prisma generate",
-    "lint": "gts lint",
-    "clean": "gts clean",
     "compile": "tsc",
-    "fix": "gts fix",
     "prepare": "npm run compile",
     "pretest": "npm run compile",
-    "posttest": "npm run lint"
   },
   "keywords": [],
   "author": "",
