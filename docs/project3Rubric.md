@@ -16,8 +16,8 @@
 |.5|Use of code formatters. | https://github.com/apurva-s/polly/blob/main/frontend/.prettierrc.json, https://github.com/apurva-s/polly/blob/main/backend/.eslintrc.json, https://github.com/apurva-s/polly/blob/main/images/eslint_in_action.jpeg|.5|
 |.5|Use of style checkers | https://github.com/apurva-s/polly/blob/main/frontend/package.json, https://github.com/apurva-s/polly/blob/main/backend/.eslintrc.json, https://github.com/apurva-s/polly/blob/main/images/eslint_in_action.jpeg|.5|
 |.5|Docs: short video, animated, hosted on your repo. That convinces people why they want to work on your code. |  https://github.com/apurva-s/polly/blob/main/backend/README.md | .5
-|.5|test cases exist  | Go to /test folder in https://github.com/apurva-s/polly/tree/main/backend , https://github.com/apurva-s/polly/blob/main/docs/UI%20MANUAL%20TESTING%20DOCUMENT%20(1).pdf| .5
-|.5|Use of code coverage  | 	https://github.com/apurva-s/polly/tree/main/backend/coverage|.5|
+|.5|test cases exist  | Go to /test folder in https://github.com/apurva-s/polly/tree/main/backend , https://github.com/apurva-s/polly/blob/main/docs/UI%20MANUAL%20TESTING%20DOCUMENT%20(1).pdf, https://github.com/apurva-s/polly/blob/main/Code%20Coverage%20Report%20by%20Phase%203| .5
+|.5|Use of code coverage  | 	https://github.com/apurva-s/polly/tree/main/backend/coverage, https://github.com/apurva-s/polly/blob/main/Code%20Coverage%20Report%20by%20Phase%203|.5|
 |.5|other automated analysis tools  | https://github.com/apurva-s/polly/actions|.5|
 |.5|test cases:.a large proportion of the issues related to handling failing cases. | https://github.com/apurva-s/polly/issues?q=is%3Aissue+is%3Aclosed+label%3Aenhancement, https://github.com/apurva-s/polly/issues?q=is%3Aissue+is%3Aclosed+label%3Abug, https://github.com/apurva-s/polly/blob/main/docs/UI%20MANUAL%20TESTING%20DOCUMENT%20(1).pdf| .5
 |.5|test cases are routinely executed | 	https://github.com/apurva-s/polly/blob/main/.github/workflows/build.yml|.5|
