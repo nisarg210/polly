@@ -12,6 +12,8 @@ import Index from './views/Index';
 import AdminDashboard from './views/AdminDashboard';
 import axios from 'axios';
 import LoginUser from "./views/LoginUser";
+import ContactUs from "./views/ContactUs";
+
 
 axios.interceptors.request.use((config) => {
   const token = localStorage.getItem('AUTH_TOKEN');
@@ -36,6 +38,8 @@ ReactDOM.render(
         <Route path="/player-results" component={PlayerResults} />
         <Route path="/login-user" component={LoginUser} />
         <Route path="/" exact component={Index} />
+
+        <Route path="/contactus" component={ContactUs} />
         {/* add redirect for first page */}
         <Redirect from="*" to="/" />
       </Switch>
