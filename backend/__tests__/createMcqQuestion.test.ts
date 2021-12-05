@@ -106,11 +106,6 @@ test('create question with invalid playerId', async () => {
   ).rejects.toThrowError();
 });
 
-// test('create question from player who is not the host', async () => {
-//   await expect(createMcqQuestionCore(otherPlayerId, roomId, 'foo question', ['a', 'b', 'c',
-//   'd'],1, prisma)).rejects.toThrowError()
-// })
-
 test('create question with empty question title', async () => {
   await expect(
     createMcqQuestionCore(
