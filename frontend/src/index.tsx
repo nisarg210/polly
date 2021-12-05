@@ -13,6 +13,7 @@ import AdminDashboard from './views/AdminDashboard';
 import axios from 'axios';
 import LoginUser from "./views/LoginUser";
 import ContactUs from "./views/ContactUs";
+import FrequentPollers from "./views/FrequentPollers";
 
 
 axios.interceptors.request.use((config) => {
@@ -37,6 +38,8 @@ ReactDOM.render(
         <Route path="/player-plays" component={PlayerPlays} />
         <Route path="/player-results" component={PlayerResults} />
         <Route path="/login-user" component={LoginUser} />
+        <Route path="/frequent-pollers" component={FrequentPollers} />
+
         <Route path="/" exact component={Index} />
 
         <Route path="/contactus" component={ContactUs} />

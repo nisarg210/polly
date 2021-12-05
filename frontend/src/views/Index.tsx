@@ -44,9 +44,13 @@ export default function Index() {
                             <Link to='/create-room'>
                                 <div className="btn btn-primary btn-lg px-4 me-sm-3">Create Room</div>
                             </Link>
-                                <Link to='/login-user'>
+                            <Link to='/login-user'>
                                 <div className="btn btn-primary btn-lg px-4 me-sm-3">Login</div>
                             </Link>
+                            <Link to='/frequent-pollers'>
+                                <div className="btn btn-primary btn-lg px-4 me-sm-3">See Active Users!</div>
+                            </Link>
+                            
                             </div>
                         </div>
                     </div>
