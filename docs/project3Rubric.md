@@ -11,7 +11,7 @@
 |.5|Number of commits: by different people  | https://github.com/apurva-s/polly/graphs/contributors| .5
 |1|issues are being closed | https://github.com/apurva-s/polly/issues| 1
 |.5|issues are discussed before they are closed | https://github.com/apurva-s/polly/issues/13, https://github.com/apurva-s/polly/issues/6, https://github.com/apurva-s/polly/issues/5| .5
-|.5|Use of syntax checkers. | Use of gts for syntax check: https://github.com/apurva-s/blob/main/backend/package.json , https://github.com/apurva-s/blob/main/images/eslint_in_action.jpeg|.5|
+|.5|Use of syntax checkers. | Use of gts for syntax check: https://github.com/apurva-s/polly/blob/main/backend/package.json , https://github.com/apurva-s/polly/blob/main/images/eslint_in_action.jpeg|.5|
 |1|Issues reports: there are many  | https://github.com/apurva-s/polly/issues | 1
 |.5|Use of code formatters. | https://github.com/apurva-s/polly/blob/main/frontend/.prettierrc.json, https://github.com/apurva-s/polly/blob/main/backend/.eslintrc.json, https://github.com/apurva-s/polly/blob/main/images/eslint_in_action.jpeg|.5|
 |.5|Use of style checkers | https://github.com/apurva-s/polly/blob/main/frontend/package.json, https://github.com/apurva-s/polly/blob/main/backend/.eslintrc.json, https://github.com/apurva-s/polly/blob/main/images/eslint_in_action.jpeg|.5|
