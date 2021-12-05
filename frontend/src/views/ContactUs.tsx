@@ -66,6 +66,8 @@ export default function ContactUs({ history }: RouteComponentProps) {
                     </table>
                     <br/>
                     <br/>
+                    <br/>
+                    <br/>
 
                     <h3> 📬  Contact Us At</h3> featurehuntteam@gmail.com
                     </div>
