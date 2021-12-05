@@ -1,4 +1,6 @@
- <h4> Project 3 Delta Video Link - https://github.com/apurva-s/polly/blob/main/docs/Proj3_Delta_PollMe_Team11.mp4 </h4>
+ <h4> Project 3 Delta Video Link (YouTube) - https://www.youtube.com/watch?v=pZQN-dwlo9k </h4>
+ <h4> Project 3 Delta Video Link (File) - https://github.com/apurva-s/polly/blob/main/docs/Proj3_Delta_PollMe_Team11.mp4 </h4>
+ 
  
 <div align="center">
 
@@ -20,7 +22,8 @@
 [![Coverage Status](https://img.shields.io/badge/coverage-91%25-brightgreen)](https://coveralls.io/github/apurva-s/polly?branch=main)
 ![lines of code](https://tokei.rs/b1/github/shahrk/polly?color=ff69b4&label=Lines%20of%20Code&style=flat-square)
 [![Known Vulnerabilities](https://img.shields.io/badge/vulnerabilities-0-brightgreen)](https://app.snyk.io/org/shahrk/project/4e0a290f-50af-4ab4-9941-c3a7f4d8bea6)
-    
+[![CI](https://github.com/apurva-s/polly/actions/workflows/workflow.yml/badge.svg)](https://github.com/apurva-s/polly/actions/workflows/workflow.yml)   
+
 </div>
 
 <h1> 💎 What is Poll Me about? </h1>
