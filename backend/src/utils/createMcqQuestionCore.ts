@@ -1,8 +1,30 @@
-import { PrismaClient, QuestionType } from '@prisma/client';
+import {PrismaClient, QuestionType} from '@prisma/client';
 import createHttpError from 'http-errors';
-import { verifyHost } from './verifyHost';
+import {verifyHost} from './verifyHost';
 
-export async function createMcqQuestionCore(playerId: string, roomId: string, title: string, options: string[], correctAnswer:number, prisma = new PrismaClient()) {
+export async function createMcqQuestionCore(
+  playerId: string | undefined,
+  roomId: string | undefined,
+  title: string | undefined,
+  options: string[] | undefined,
+  correctAnswer: number | undefined,
+  prisma = new PrismaClient()
+) {
+  if (playerId === undefined) {
+    throw new Error('Player is undefined');
+  }
+  if (roomId === undefined) {
+    throw new Error('Room is undefined');
+  }
+  if (title === undefined) {
+    throw new Error('Title is undefined');
+  }
+  if (options === undefined) {
+    throw new Error('Option is undefined');
+  }
+  if (correctAnswer === undefined) {
+    throw new Error('Answer is undefined');
+  }
   if (!(await verifyHost(playerId, roomId, prisma))) {
     throw new createHttpError.Forbidden('Not allowed');
   }
@@ -15,21 +37,19 @@ export async function createMcqQuestionCore(playerId: string, roomId: string, ti
         create: {
           description: title,
           correctAnswer: correctAnswer,
-        }
-      }
-    }
-  })
+        },
+      },
+    },
+  });
 
   const _options = await prisma.mCQOption.createMany({
-    data:
-      options.map((option: string) => {
-        return {
-          description: option,
-          questionId: question.id
-        }
-      })
-  })
+    data: options.map((option: string) => {
+      return {
+        description: option,
+        questionId: question.id,
+      };
+    }),
+  });
 
-  return { question, options }
-
+  return {question, options};
 }
