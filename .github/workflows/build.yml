@@ -31,6 +31,6 @@ jobs:
       - name: Test
         run: npm run test
         working-directory: ./backend
-      - name: Deploy to AWS
-        run: node ./node_modules/serverless/bin/serverless.js deploy --stage prod
-        working-directory: ./backend
+#       - name: Deploy to AWS
+#         run: node ./node_modules/serverless/bin/serverless.js deploy --stage prod
+#         working-directory: ./backend
