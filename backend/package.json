@@ -47,8 +47,9 @@
   },
   "typeCoverage": {
   "atLeast": 90
-}
+},
   "keywords": [],
   "author": "",
   "license": "ISC"
+}
 }
