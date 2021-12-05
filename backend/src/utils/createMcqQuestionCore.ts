@@ -10,6 +10,7 @@ export async function createMcqQuestionCore(
   correctAnswer: number | undefined,
   prisma = new PrismaClient()
 ) {
+  //allowing undefined as a type in parameters and throwing error.
   if (playerId === undefined) {
     throw new Error('Player is undefined');
   }
