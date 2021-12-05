@@ -62,15 +62,3 @@ test('valid params already existing user', async () => {
   expect(res).toBeValidCreateRoomResponse();
 
 })
-
-// test('valid params invalid userId', async () => {
-//   await expect(createRoomCore('---', "foo", "foo bar")).rejects.toThrowError();
-// })
-
-// test('valid params empty name', async () => {
-//   await expect(createRoomCore('', '', "foo bar")).rejects.toThrowError();
-// })
-
-// test('valid params empty room title', async () => {
-//   await expect(createRoomCore('', 'foo', '')).rejects.toThrowError();
-// })
