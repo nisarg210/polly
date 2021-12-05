@@ -136,9 +136,7 @@
 
 
 
-DATABASE_URL=postgres://pwsobkvnqkhtom:cf359361c40657536b98a815aebbfe3b7bd3189737a77973bb3ecc5b049c3edf@ec2-54-145-139-208.compute-1.amazonaws.com:5432/d4u7vm8s630ih6
-JWT_SECRET="secret"
-ALLOWED_ORIGIN=*
+
 import { Prisma, PrismaClient } from '@prisma/client'
 import { createMcqQuestionCore } from '../src/utils/createMcqQuestionCore'
 import { createRoomCore } from '../src/utils/createRoomCore'
