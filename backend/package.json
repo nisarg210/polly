@@ -43,11 +43,7 @@
     "compile": "tsc",
     "prepare": "npm run compile",
     "pretest": "npm run compile"
-    "ts-coverage": "typescript-coverage-report"
   },
-  "typeCoverage": {
-  "atLeast": 90
-},
   "keywords": [],
   "author": "",
   "license": "ISC"
