@@ -28,9 +28,3 @@ jobs:
       - name: Test
         run: npm run test
         working-directory: ./backend
-      - name: Code coverage 
-        run: npm install --save-dev typescript-coverage-report
-        working-directory: ./backend
-      - name: Code Coverage 2 
-        run: npm run ts-coverage
-        working-directory: ./backend
