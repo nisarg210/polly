@@ -9,10 +9,10 @@ on:
 jobs:
   testAndDeploy:
     env:
-      DATABASE_URL: ${{ secrets.DATABASE_URL }}
-      JWT_SECRET: ${{ secrets.JWT_SECRET }}
-      ALLOWED_ORIGIN: ${{ secrets.ALLOWED_ORIGIN }}
-      SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
+      DATABASE_URL: 'postgres://pwsobkvnqkhtom:cf359361c40657536b98a815aebbfe3b7bd3189737a77973bb3ecc5b049c3edf@ec2-54-145-139-208.compute-1.amazonaws.com:5432/d4u7vm8s630ih6'
+      JWT_SECRET: 'secret'
+      ALLOWED_ORIGIN: *
+#       SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
