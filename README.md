@@ -13,7 +13,7 @@
 ![GitHub](https://img.shields.io/github/license/shahrk/polly)
 ![GitHub last commit](https://img.shields.io/github/last-commit/apurva-s/polly)
 [![build](https://github.com/apurva-s/polly/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/apurva-s/polly/actions/workflows/build.yml)
-[![DOI](https://zenodo.org/badge/403373361.svg)](https://zenodo.org/badge/latestdoi/403373361)
+[![DOI](https://zenodo.org/badge/429940108.svg)](https://zenodo.org/badge/latestdoi/429940108)
 [![Docker](https://img.shields.io/badge/Containerized-Docker-blue)](https://docs.docker.com/compose/)
 [![Coverage Status](https://img.shields.io/badge/coverage-91%25-brightgreen)](https://coveralls.io/github/apurva-s/polly?branch=main)
 ![lines of code](https://tokei.rs/b1/github/shahrk/polly?color=ff69b4&label=Lines%20of%20Code&style=flat-square)
