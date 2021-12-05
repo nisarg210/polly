@@ -38,7 +38,7 @@ export default function Index() {
                     <div className="col-lg-6">
                         <div className=" my-5">
                             <h1 className="display-5 fw-bolder text-white mb-2">Online Poll Maker</h1>
-                            <p className="lead text-white-50 mb-4">Welcome to polly, engaging poll across any device and collect user feedback, conduct market research, and decode voting behavior!</p>
+                            <p className="lead text-white-50 mb-4">Welcome to polly, create engaging polls across any device and collect user feedback, conduct market research, and decode voting behavior!</p>
                             <div className="d-grid gap-3 d-sm-flex ">
 
                             <Link to='/create-room'>
