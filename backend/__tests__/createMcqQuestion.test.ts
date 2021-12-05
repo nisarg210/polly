@@ -227,21 +227,21 @@ test('create question with proper parameters', async () => {
   expect(res).toBeValidCreateMcqQuestionResponse();
 })
 
-// test('create question with invalid playerId', async () => {
-//   await expect( createMcqQuestionCore('----', roomId, 'foo question', ['a', 'b', 'c', 
-//   'd'],1, prisma)).rejects.toThrowError();
-// })
+test('create question with invalid playerId', async () => {
+  await expect( createMcqQuestionCore(null, roomId, 'foo question', ['a', 'b', 'c', 
+  'd'],1, prisma)).rejects.toThrowError();
+})
 
 // test('create question from player who is not the host', async () => {
 //   await expect(createMcqQuestionCore(otherPlayerId, roomId, 'foo question', ['a', 'b', 'c', 
 //   'd'],1, prisma)).rejects.toThrowError()
 // })
 
-// test('create question with empty question title', async () => {
-//   await expect(createMcqQuestionCore(hostPlayerId, roomId, undefined, ['a', 'b', 'c', 
-//   'd'],1, prisma)).rejects.toThrowError()
-// })
+test('create question with empty question title', async () => {
+  await expect(createMcqQuestionCore(hostPlayerId, roomId, null, ['a', 'b', 'c', 
+  'd'],1, prisma)).rejects.toThrowError()
+})
 
-// test('create question with empty options', async () => {
-//   await expect(createMcqQuestionCore(hostPlayerId, roomId, 'foo title', undefined,1, prisma)).rejects.toThrowError()
-// })
+test('create question with empty options', async () => {
+  await expect(createMcqQuestionCore(hostPlayerId, roomId, 'foo title', null,1, prisma)).rejects.toThrowError()
+})
