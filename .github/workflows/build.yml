@@ -28,3 +28,7 @@ jobs:
       - name: Test
         run: npm run test
         working-directory: ./backend
+        scripts:
+          - npm install codecov -g
+        after_success:
+          - codecov
