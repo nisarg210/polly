@@ -84,20 +84,3 @@ test('enter room with proper parameters', async () => {
   const res = await enterRoomCore(playerId, 'foo', roomKey, prisma);
   expect(res).toBeValidEnterRoomResponse();
 })
-
-// test('enter room with invalid playerId', async () => {
-//   await expect(enterRoomCore('----', 'foo', roomKey, prisma)).rejects.toThrowError();
-// })
-
-// test('enter room with invalid roomKey', async () => {
-//   await expect(enterRoomCore(playerId, 'foo', '---', prisma)).rejects.toThrowError();
-// })
-
-// // If playerId is provided empty, a player is automatically created
-// test('enter room with empty playerId', async () => {
-//   expect(await enterRoomCore('', 'foo', roomKey, prisma)).toBeValidEnterRoomResponse();
-// })
-
-// test('create question with empty roomKey', async () => {
-//   await expect(enterRoomCore(playerId, 'foo', '', prisma)).rejects.toThrowError();
-// })
