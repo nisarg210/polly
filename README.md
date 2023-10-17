@@ -137,7 +137,10 @@ Note: There are many other providers that provide static site deployments like V
  
       npx prisma generate
 - Start local serverless API 
- 
+
+      npx prisma db push
+- Pushes schema into the local Postgres server
+
       npx serverless offline      
             
 Performing database changes(Refer [prisma docs](https://www.prisma.io/docs/))
