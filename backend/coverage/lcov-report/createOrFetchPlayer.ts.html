@@ -119,6 +119,7 @@
 <span class="cline-any cline-yes">9x</span>
 <span class="cline-any cline-yes">9x</span></td><td class="text"><pre class="prettyprint lang-js">import { Player, PrismaClient } from '@prisma/client';
 import createHttpError from 'http-errors';
+
 &nbsp;
 export async function createOrFetchPlayer(input: {playerId?: string, name?: string}, prisma: PrismaClient): Promise&lt;Player&gt; {
   let player: Player | null;
@@ -141,6 +142,7 @@ export async function createOrFetchPlayer(input: {playerId?: string, name?: stri
       }
     })
   }
+  
 &nbsp;
   if(!player) {
     throw new createHttpError.BadRequest('Invalid player');
