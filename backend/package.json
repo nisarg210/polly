@@ -38,7 +38,7 @@
     "gts": "^3.1.0"
   },
   "scripts": {
-    "test": "jest --maxWorkers 1",
+    "test": "jest --maxWorkers 1 --verbose",
     "postinstall": "npx prisma generate",
     "compile": "tsc",
     "prepare": "npm run compile",

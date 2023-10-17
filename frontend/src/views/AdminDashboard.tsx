@@ -6,7 +6,7 @@ import createNewRoom from '../util/createNewRoom'
 import { RouteComponentProps } from 'react-router'
 import { fetchRoomAnalytics } from '../util/fetchRoomAnalytics'
 import { Doughnut } from 'react-chartjs-2';
-// import { Bar } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 
 interface IAnalytics {
   [key: string]: {
@@ -21,6 +21,7 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
     useContext(AppContext)
 
   const [analytics, setAnalytics] = useState<IAnalytics>();
+  const [graph, setGraph] = useState('doughnut');
 
   useEffect(() => {
     (async function () {
@@ -41,45 +42,79 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
     })();
   },[]);
 
-  const doughnutCharts = analytics ? Object.values(analytics).map((options) => {
-    const mapped = options.map((option) => {
-      return {
-        text: option.description,
-        value: option.count,
+  let doughnutCharts = <></>
+  let barCharts = <></>
+
+  if(analytics) {
+    Object.values(analytics).map((options) => {
+      const mapped = options.map((option) => {
+        return {
+          text: option.description,
+          value: option.count,
+        }
+      
       }
+      
+      )
+
+      doughnutCharts = 
+        (<div>
+          <Doughnut
+            data={{
+              labels: mapped.map((c) => c.text),
+              datasets: [
+                {
+                  label: '# of votes',
+                  data: mapped.map((c) => c.value),
+                  backgroundColor: [
+                    'rgba(255, 99, 132, 0.7)',
+                    'rgba(255, 159, 64, 0.7)',
+                    'rgba(255, 205, 86, 0.7)',
+                    'rgba(75, 192, 192, 0.7)',
+                  ],
+                  borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                  ],
+                  borderWidth: 1
+                }
+              ]
+            }}
+          />
+        </div>)
+
+      barCharts = (<div>
+        <Bar
+          data={{
+            labels: mapped.map((c) => c.text),
+            datasets: [
+              {
+                label: '# of votes',
+                data: mapped.map((c) => c.value),
+                backgroundColor: [
+                  'rgba(255, 99, 132, 0.7)',
+                  'rgba(255, 159, 64, 0.7)',
+                  'rgba(255, 205, 86, 0.7)',
+                  'rgba(75, 192, 192, 0.7)',
+                ],
+                borderColor: [
+                  'rgb(255, 99, 132)',
+                  'rgb(255, 159, 64)',
+                  'rgb(255, 205, 86)',
+                  'rgb(75, 192, 192)',
+                ],
+                borderWidth: 1
+              }
+            ]
+          }}
+        />
+      </div>) 
+
+
     })
-    console.log(mapped.map((c) => c.text), mapped.map((c) => c.value));
-
-    return <div>
-      <Doughnut
-        data={{
-          labels: mapped.map((c) => c.text),
-          datasets: [
-            {
-              label: '# of votes',
-              data: mapped.map((c) => c.value),
-              backgroundColor: [
-                'rgba(255, 99, 132, 0.7)',
-                'rgba(255, 159, 64, 0.7)',
-                'rgba(255, 205, 86, 0.7)',
-                'rgba(75, 192, 192, 0.7)',
-              ],
-              borderColor: [
-                'rgb(255, 99, 132)',
-                'rgb(255, 159, 64)',
-                'rgb(255, 205, 86)',
-                'rgb(75, 192, 192)',
-              ],
-              borderWidth: 1
-            }
-          ]
-        }}
-      />
-    </div>
-  }) : <></>;
-
-  console.log(doughnutCharts);
-
+  }
 
   return (
     <>
@@ -165,10 +200,46 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
             <div className="col-lg-6">
                 <div className="card2 card border-0 px-4 py-5">
                     <h2 className="mb-0 mr-4 mt-2">Analytics</h2>
-                    <div className="row px-3 justify-content-left mt-4 mb-5 border-line">  </div>
-                    <div className="row">
-                    {doughnutCharts}
+                    <div className="row px-3">
+                    <div className="row px-3 mb-4">
+                    <div className="line"></div>
                     </div>
+                    <div
+                        className="get-started btn btn-primary btn-lg px-4 me-sm-3 hover:shadow-lg ease-linear transition-all duration-150"
+                        onClick={() => {
+                          setGraph('bar')
+                        }
+                      }
+                      >
+                        Bar Chart
+                    </div>
+                    <div className="row px-3 mb-4">
+                    <div className="line"></div>
+                    </div>
+                    <div
+                        className="get-started btn btn-primary btn-lg px-4 me-sm-3 hover:shadow-lg ease-linear transition-all duration-150"
+                        onClick={() => {
+                          setGraph('doughnut')
+                        }
+                      }
+                      >
+                        Doughnut Chart
+                    </div>
+                  </div>            
+                    
+                    <div className="row px-3 justify-content-left mt-4 mb-5 border-line">  </div>
+                    {
+                      graph === 'doughnut' ? (
+                      <div className="row" id="doughnutChart">
+                        {doughnutCharts}
+                    </div>
+                      ) :
+                      (
+                        <div className="row" id="barChart">
+                          {barCharts}
+                        </div>
+                      )
+                    }
                 </div>
             </div>
 

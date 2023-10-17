@@ -26,6 +26,6 @@
     "src"
   ],
   "editor.codeActionsOnSave": {
-      "source.fixAll.tslint": true
+    "source.fixAll.tslint": true
   }
 }
