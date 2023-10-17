@@ -10,16 +10,16 @@ declare global {
   }
 }
 
-let prisma: PrismaClient<Prisma.PrismaClientOptions, never, Prisma.RejectOnNotFound | Prisma.RejectPerOperation | undefined>;
+let prisma:PrismaClient<Prisma.PrismaClientOptions, never, Prisma.RejectOnNotFound | Prisma.RejectPerOperation | undefined>;
 
 beforeAll(() => {
-  // Initialize db connection
-  prisma = new PrismaClient();
+  
+  prisma = new PrismaClient();      // Initialize db connection
 })
 
 afterAll(() => {
-  // Cleanup db connection
-  prisma.$disconnect();
+  
+  prisma.$disconnect();             // Cleanup db connection
 })
 
 // Create custom matcher to test a valid function reponse

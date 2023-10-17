@@ -2,6 +2,7 @@
 <!doctype html>
 <html lang="en">
 
+
 <head>
     <title>Code coverage report for createMcqQuestionCore.ts</title>
     <meta charset="utf-8" />
@@ -15,7 +16,8 @@
         }
     </style>
 </head>
-    
+   
+
 <body>
 <div class='wrapper'>
     <div class='pad1'>
@@ -129,6 +131,7 @@
 import createHttpError from 'http-errors';
 import { verifyHost } from './verifyHost';
 &nbsp;
+
 export async function createMcqQuestionCore(playerId: string, roomId: string, title: string, options: string[], correctAnswer:number, prisma = new PrismaClient()) {
   if (!(await verifyHost(playerId, roomId, prisma))) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >    throw new createHttpError.Forbidden('Not allowed');</span>
@@ -146,6 +149,7 @@ export async function createMcqQuestionCore(playerId: string, roomId: string, ti
       }
     }
   })
+
 &nbsp;
   const _options = await prisma.mCQOption.createMany({
     data:
@@ -156,6 +160,7 @@ export async function createMcqQuestionCore(playerId: string, roomId: string, ti
         }
       })
   })
+  
 &nbsp;
   return { question, options }
 &nbsp;

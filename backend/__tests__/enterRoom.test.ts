@@ -20,6 +20,7 @@ let prisma: PrismaClient<
 
 // Player ID of the host user
 let playerId: string;
+
 // Key of room that user will join
 let roomKey: string;
 
