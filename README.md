@@ -136,7 +136,7 @@ Note: There are many other providers that provide static site deployments like V
 - Generate prisma client
  
       npx prisma generate
-- Start local serverless API 
+- Start local serverless API
 
       npx prisma db push
 - Pushes schema into the local Postgres server
@@ -163,7 +163,6 @@ Performing database changes(Refer [prisma docs](https://www.prisma.io/docs/))
  
       npm run start
       
-
 <h1>Deployment details P2 </h1>
 
 By using docker we could deploy the whole system in one single command : 
