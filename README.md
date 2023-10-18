@@ -92,8 +92,8 @@ https://user-images.githubusercontent.com/32777604/144496018-098b1ce0-2b4c-49e0-
 The backend API is deployed on AWS Lambda using the [serverless framework](https://www.serverless.com/). Automated deploys are setup via a Github action that detects pushes to the main branch in the backend directory present in the project root. The action performs the following steps
 - Install dependencies using `npm install`
 - Generate prisma client(more about Prisma ORM in `./backend/README.md`)
-- Push pending migrations to the database
-- Deploy the service on AWS Lambda
+- Push pending migrations to the database `npx prisma push db`
+- Deploy the service on AWS Lambda `npx serverless offline`
 
 The above action requires the following environment variables to be set
 
