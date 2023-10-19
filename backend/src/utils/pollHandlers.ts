@@ -2,12 +2,12 @@ import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 import middy, { MiddlewareObject } from 'middy'; // Import Middy
 import { checkAuth, checkAuthInput } from './checkAuth';
 
-// Define the type for the middleware
+// type for the middleware
 type MiddlewareType = middy.MiddlewareObject<APIGatewayProxyEvent, APIGatewayProxyResult>;
 
 // Lambda handler function for creating a poll
 const createPollHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
-    // Ensure that event.body is not null or undefined
+    // Ensuring that event.body is not null or undefined
     if (!event.body) {
         return {
             statusCode: 400, // Bad Request
@@ -22,7 +22,7 @@ const createPollHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewa
         // Continue with creating the poll after successful JSON parsing
         // ...
 
-        // Replace this with your Prisma or database code to create the poll
+        // Replacing this with Prisma or database code to create the poll
         // ...
 
         return {
@@ -37,7 +37,7 @@ const createPollHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewa
     }
 };
 
-// Use the checkAuth middleware to check authentication
+//checkAuth middleware to check authentication
 const middlewareOptions: checkAuthInput = {
     blockExecution: true,
 };
@@ -56,7 +56,7 @@ const authMiddleware: MiddlewareType = {
     },
 };
 
-// Apply the authentication middleware to the Lambda handler
+// authentication middleware to the Lambda handler
 const handler = middy(createPollHandler).use(authMiddleware);
 
 export { handler };
