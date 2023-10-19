@@ -32,6 +32,7 @@ export async function enterRoomCore(playerId: string, name: string, roomKey: str
         roomId,
       }
     })
+    
   } catch (error) {
     console.log(error);
     throw new createHttpError.InternalServerError('Unable to add player to room')
