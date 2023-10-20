@@ -36,6 +36,11 @@ export default function Index() {
         <title>PollMe</title>
        
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <div id="mc_embed_shell">
+      <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+        #mc_embed_signup{background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 600px;}
+</style>
      
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
