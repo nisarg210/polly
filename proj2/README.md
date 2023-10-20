@@ -20,7 +20,3 @@ Sachin Kanth (sakanth@ncsu.edu)
 
 Repo Link:  https://github.com/KabirSinghBhatia/polly
 Proj2 Demo Link: https://youtu.be/8GkJYRQYblc
-
-
-
-
