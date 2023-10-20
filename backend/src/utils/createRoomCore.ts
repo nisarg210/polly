@@ -14,8 +14,8 @@ export async function createRoomCore(playerId: string | undefined, name: string,
     throw new createHttpError.InternalServerError('Unable to fetch player details');
   }
 
-  const key = generateRoomKey(); // Generate random room code
-  const token = createToken(player.id); // Generate player auth token to be attached with every subsequent request
+  const key = generateRoomKey();              // Generate random room code
+  const token = createToken(player.id);       // Generate player auth token to be attached with every subsequent request
 
   const room = await prisma.room.create({
     data: {

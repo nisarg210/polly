@@ -12,6 +12,7 @@ export async function fetchAnalytics(roomId: string, prisma = new PrismaClient()
   })).map((question) => question.id);
 
   const mcqQuestionData = await prisma.mCQQuestionPlayerAnswer.groupBy({
+
     by: ['answerId', 'qid'],
     having: {
       qid: {
@@ -37,6 +38,7 @@ export async function fetchAnalytics(roomId: string, prisma = new PrismaClient()
       const optionCount = mcqQuestionData.filter((_mcqQuestionData) => _mcqQuestionData.answerId === option.id && _mcqQuestionData.qid === questionId) 
 
       return {
+
         id: option.id,
         description: option.description,
         count: (optionCount && optionCount.length) ? optionCount[0]._count['answerId'] : 0,
@@ -46,6 +48,7 @@ export async function fetchAnalytics(roomId: string, prisma = new PrismaClient()
     res[questionId] = optionsWithCount;
     
   }
+  
   // console.log(res);
     
   // const mcqQuestionOptions = awiat prisma.

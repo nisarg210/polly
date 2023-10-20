@@ -3,7 +3,8 @@ import createHttpError from 'http-errors';
 import { boolean } from 'joi';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 
-interface checkAuthInput {
+
+export interface checkAuthInput {
   blockExecution: boolean;
 }
 
