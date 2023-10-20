@@ -1,0 +1,22 @@
+version: '3'
+services:
+  
+  backend:
+    build: ../backend
+    restart: always
+    ports:
+      - ${BACKEND_HOST_PORT}:3000
+
+  frontend:
+    build: ../frontend
+    depends_on:
+      - backend
+    restart: always
+    ports:
+      - ${FRONTEND_HOST_PORT}:3001 # Container port should be same as PORT mentioned in ../frontend/.env
+    env_file:
+      - ../frontend/.env
+
+networks:
+  default:
+    name: polly_hunt
