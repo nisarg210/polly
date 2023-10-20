@@ -20,3 +20,5 @@ Sachin Kanth (sakanth@ncsu.edu)
 
 Repo Link:  https://github.com/KabirSinghBhatia/polly
 Proj2 Demo Link: https://youtu.be/8GkJYRQYblc
+
+Check out project rubric in [Polly_rubric_2.csv](https://github.com/KabirSinghBhatia/polly/blob/main/proj2/Polly_rubric_2.csv)
