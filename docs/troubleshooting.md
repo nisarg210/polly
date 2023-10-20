@@ -43,5 +43,5 @@ This document provides solutions to common issues and troubleshooting tips for t
 
 ### Problem 6: Error Messages
 
-- **Symptoms:** You encounter error message `ERR_OSSL_EVP_UNSUPPORTED`.
+- **Symptoms:** You encounter error message `ERR_OSSL_EVP_UNSUPPORTED`.(For linux and mac users)
 - **Solution:** You have to run the ssl legacy version i.e 1.1.1 in order to the run the software. One workaround to this is to add`--openssl-legacy-provider` tag while running - `NODE_OPTIONS=--openssl-legacy-provider npm run start`. Another possible option is to update `package.json` on `polly/frontend/`. Add `"start": "react-scripts --openssl-legacy-provider start", "build": "react-scripts --openssl-legacy-provider build"`.

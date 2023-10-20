@@ -1,26 +1,3 @@
-/*
-MIT License
-
-Copyright (c) 2023 Your Name
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
-FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS
-OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF,
-OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
-
 /*eslint-disable*/
 import { AppContext } from '../components/App'
 import { useContext, useEffect, useState } from 'react'
@@ -30,7 +7,6 @@ import { RouteComponentProps } from 'react-router'
 import { fetchRoomAnalytics } from '../util/fetchRoomAnalytics'
 import { Doughnut } from 'react-chartjs-2';
 import { Bar } from 'react-chartjs-2';
-import React from 'react';
 
 interface IAnalytics {
   [key: string]: {
@@ -41,7 +17,6 @@ interface IAnalytics {
 }
 
 export default function AdminDashboard({ history }: RouteComponentProps) {
-
   const { hostId, setHostId, name, setName, title, setTitle, roomId, roomKey, setRoomId, setRoomKey} =
     useContext(AppContext)
 
@@ -141,32 +116,6 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
     })
   }
 
-  // Email sending functonality begins
-  const [emailList, setEmailList] = useState('');
-  const [link, setLink] = useState('');
-  
-  const handleEmailListChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setEmailList(e.target.value);
-  }
-
-  const sendLink = () => {
-    const emailAddresses = emailList.split(',').map(email => email.trim());
-    // Replace this with your link generation logic
-    const generatedLink = roomKey;
-
-    // Send the link to all email addresses (you can implement this part)
-    emailAddresses.forEach(email => {
-      // You can send the email or perform other actions here
-      console.log(`Sending link ${generatedLink} to ${email}`);
-    });
-
-    setLink(generatedLink);
-  }
-
-
-
-  // Email sending functionality ends
-
   return (
     <>
 
@@ -222,39 +171,6 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
                             }} >  <div>Copy</div>  </div>
                         </div>
                     </div>
-
-                    
-                    <div id="mc_embed_shell">
-      <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css"></link>
-
-                    <div id="mc_embed_signup">
-                      <form action="https://gmail.us9.list-manage.com/subscribe/post?u=406cd0357a3b2c5b1a7b8bd45&amp;id=5b7af67200&amp;f_id=0041c3e0f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank">
-                          <div id="mc_embed_signup_scroll"><h2>Subscribe</h2>
-                              <div className="indicates-required"><span className="asterisk">*</span> indicates required</div>
-                              <div className="mc-field-group"><label htmlFor="mce-EMAIL">Email Address <span className="asterisk">*</span></label><input type="email" name="EMAIL" className="required email" id="mce-EMAIL" required={true} value=""></input><span id="mce-EMAIL-HELPERTEXT" className="helper_text"></span></div>
-                          <div id="mce-responses" className="clear foot">
-                              <div className="response" id="mce-error-response" ></div>
-                              <div className="response" id="mce-success-response" ></div>
-                          </div>
-                      <div  aria-hidden="true">
-                          /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
-                          <input type="text" name="b_406cd0357a3b2c5b1a7b8bd45_5b7af67200" tabIndex={-1} value=""></input>
-                      </div>
-                          <div className="optionalParent">
-                              <div className="clear foot">
-                                  <input type="submit" name="subscribe" id="mc-embedded-subscribe" className="button" value="Subscribe"></input>
-                                  <p ><a href="http://eepurl.com/iCaPWA" title="Mailchimp - email marketing made easy and fun"><span ><img className="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp"></img></span></a></p>
-                              </div>
-                          </div>
-                      </div>
-                    </form>
-                  </div>
-
-                  <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {(window as any).fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';}(jQuery));var $mcj = jQuery.noConflict(true);</script></div>
-
-                    
-                    
-                    
 
                  {/*
                   <div className="row mb-3 px-3"> <button type="submit" className="btn btn-blue text-center">Login</button> </div>
