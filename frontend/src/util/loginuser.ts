@@ -12,8 +12,10 @@ export async function loginuser(params: LoginUserDetails) {
     process.env.REACT_APP_API_BASE_URL + 'login-user',
     params,
   )
-
-
-  return true;
+  
+  if(data.loggedIn){
+    return true;
+  }
+  return false;
 
 }
