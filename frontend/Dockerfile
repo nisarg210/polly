@@ -4,4 +4,4 @@ WORKDIR /usr/src/app
 RUN npm install
 EXPOSE 3001
 COPY . ./
-CMD npm run start
+CMD ["npm", "start"]
