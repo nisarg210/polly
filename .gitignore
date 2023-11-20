@@ -33,3 +33,4 @@ dist/**/*
 
 # env
 /frontend/*.env
+/backend/.env
