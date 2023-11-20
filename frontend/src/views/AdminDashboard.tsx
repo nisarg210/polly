@@ -37,13 +37,15 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
       setInterval(async ()=> {
 
         const data = await fetchRoomAnalytics({roomId})
-        setAnalytics(data.analytics)},
+        setAnalytics(data.analytics)
+        //console.log(analytics);
+      },
         5000);
     })();
   },[]);
 
-  let doughnutCharts = <></>
-  let barCharts = <></>
+  var doughnutCharts: JSX.Element[] = []
+  var barCharts: JSX.Element[] = []
 
   if(analytics) {
     Object.values(analytics).map((options) => {
@@ -57,7 +59,7 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
       
       )
 
-      doughnutCharts = 
+      let doughnutChart = 
         (<div>
           <Doughnut
             data={{
@@ -84,8 +86,9 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
             }}
           />
         </div>)
+      doughnutCharts.push(doughnutChart);
 
-      barCharts = (<div>
+     let barChart = (<div>
         <Bar
           data={{
             labels: mapped.map((c) => c.text),
@@ -111,7 +114,7 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
           }}
         />
       </div>) 
-
+    barCharts.push(barChart);
 
     })
   }
@@ -228,15 +231,18 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
                   </div>            
                     
                     <div className="row px-3 justify-content-left mt-4 mb-5 border-line">  </div>
+                    {/* {
+                      doughnutCharts.map((ch)=>(ch))
+                    } */}
                     {
                       graph === 'doughnut' ? (
                       <div className="row" id="doughnutChart">
-                        {doughnutCharts}
+                        {doughnutCharts.map((ch)=>(ch))}
                     </div>
                       ) :
                       (
                         <div className="row" id="barChart">
-                          {barCharts}
+                          {barCharts.map((ch)=>(ch))}
                         </div>
                       )
                     }

@@ -14,7 +14,7 @@ const handler = middy(async (event: APIGatewayProxyEvent): Promise<APIGatewayPro
 
   const { playerId, roomId } = event.body as any;
 
-  const analytics = await loginUser(roomId, prisma);
+  const analytics = await loginUser(roomId, "",prisma);
 
   await prisma.$disconnect();
 
