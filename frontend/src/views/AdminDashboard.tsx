@@ -7,10 +7,14 @@ import { RouteComponentProps } from 'react-router'
 import { fetchRoomAnalytics } from '../util/fetchRoomAnalytics'
 import { Doughnut } from 'react-chartjs-2';
 import { Bar } from 'react-chartjs-2';
+import { fetchQuestionText } from '../util/fetchQuestionText';
+import html2canvas from 'html2canvas'
+import jsPDF from 'jspdf'
 
 interface IAnalytics {
   [key: string]: {
     id: number;
+    ques: string;
     description: string;
     count: number;
   }[]
@@ -22,7 +26,6 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
 
   const [analytics, setAnalytics] = useState<IAnalytics>();
   const [graph, setGraph] = useState('doughnut');
-
   useEffect(() => {
     (async function () {
       const _roomId = localStorage.getItem('roomId');
@@ -46,22 +49,31 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
 
   var doughnutCharts: JSX.Element[] = []
   var barCharts: JSX.Element[] = []
-
+  
   if(analytics) {
+    var question:string[]=[]
     Object.values(analytics).map((options) => {
       const mapped = options.map((option) => {
         return {
           text: option.description,
           value: option.count,
+          question: option.ques
         }
-      
       }
       
       )
-
       let doughnutChart = 
         (<div>
           <Doughnut
+          id= {mapped[0].question}
+          options= {{
+            plugins: {
+                title: {
+                    display: true,
+                    text: "Question: "+ mapped[0].question,
+                }
+            }
+        }}
             data={{
               labels: mapped.map((c) => c.text),
               datasets: [
@@ -90,6 +102,14 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
 
      let barChart = (<div>
         <Bar
+         options= {{
+          plugins: {
+              title: {
+                  display: true,
+                  text: mapped[0].question,
+              }
+          }
+      }}
           data={{
             labels: mapped.map((c) => c.text),
             datasets: [
@@ -117,8 +137,56 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
     barCharts.push(barChart);
 
     })
-  }
 
+  }
+const download =async()=>{
+//   const questionText= await fetchQuestionText({ roomId})
+//   console.log(questionText.questionText,"qtext");
+//   const quesarr:string[]=questionText.questionText;
+//   const pdf = new jsPDF("landscape");
+//  let i=1;
+//   quesarr.map((q,index)=>{
+//       const canvas = document.getElementById(q);
+//       if(canvas){
+//         console.log(canvas)
+//         if(index!=0){
+//           pdf.addPage();
+//           pdf.setPage(index+1)
+//         } 
+//         html2canvas(canvas)
+//           .then((canvas) => {
+//             const imgData = canvas.toDataURL('image/jpeg',1.0);        
+//             console.log(imgData)  
+//             pdf.addImage(canvas, 'JPEG', 15, 15,100, 100);
+//             //pdf.save("download.pdf");
+//           })
+       
+//       }
+//   })
+//   const pdfBlob = pdf.output('blob');
+//   const pdfUrl = URL.createObjectURL(pdfBlob);
+
+//   // Open the generated PDF in a new tab
+//   window.open(pdfUrl, '_blank');
+//   //window.open(pdfData, '_blank');
+
+const chart =(graph=='doughnut')?"doughnutChart":'barChart'
+const content = document.getElementById(chart);
+
+// Use html2canvas to capture the content as an image
+if(content){
+  const canvas = await html2canvas(content);
+  const pdf = new jsPDF();
+  pdf.addImage(canvas.toDataURL('image/png'), 'PNG', 0, 0, pdf.internal.pageSize.width, pdf.internal.pageSize.height);
+  
+  // Save the PDF
+  pdf.save('Anlaytics.pdf');
+}
+
+
+// Create a PDF document
+
+}
   return (
     <>
 
@@ -194,6 +262,15 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
                         >
                         Refresh
                         </div>
+                        <div
+                        className="get-started btn btn-primary btn-lg px-4 me-sm-3 hover:shadow-lg ease-linear transition-all duration-150"
+                        onClick={() => {
+                          download()
+                        }
+                      }
+                      >
+                       Download
+                    </div>
                     </div>
                 
                 </div>

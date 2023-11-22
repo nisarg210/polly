@@ -32,7 +32,13 @@ export async function fetchAnalytics(roomId: string, prisma = new PrismaClient()
         questionId,
       }
     })
-
+    
+    const question= await prisma.mCQQuestion.findUnique({
+      where:{
+        qid:questionId,
+      }
+    })
+  console.log(question?.description, "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq")
     const optionsWithCount = options.map((option) => {
 
       const optionCount = mcqQuestionData.filter((_mcqQuestionData) => _mcqQuestionData.answerId === option.id && _mcqQuestionData.qid === questionId) 
@@ -40,6 +46,7 @@ export async function fetchAnalytics(roomId: string, prisma = new PrismaClient()
       return {
 
         id: option.id,
+        ques: (question)? question.description : "",
         description: option.description,
         count: (optionCount && optionCount.length) ? optionCount[0]._count['answerId'] : 0,
       }
