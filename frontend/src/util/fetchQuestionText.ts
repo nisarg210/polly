@@ -23,14 +23,15 @@ OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import axios from 'axios';
 
-interface IFetchQuestionData {
-  roomKey: string;
-}
+interface IFetchRoomAnalytics {
+    roomId: string
+  }
 
-export async function fetchQuestionData(params: IFetchQuestionData) {
+export async function fetchQuestionText({roomId}: IFetchRoomAnalytics) {
   const { data } = await axios.post(
-    process.env.REACT_APP_API_BASE_URL + 'fetch-question-data',
-    params
+    process.env.REACT_APP_API_BASE_URL + 'fetch-question-text',{
+        roomId
+    }
   );
 
   return data;

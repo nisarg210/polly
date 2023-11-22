@@ -32,4 +32,5 @@ Thumbs.db
 dist/**/*
 
 # env
-/frontend/.env
+/frontend/*.env
+/backend/.env
