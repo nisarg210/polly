@@ -32,9 +32,23 @@ import { voteMcq } from '../util/voteMcq'
 import createNewRoom from "../util/createNewRoom";
 import {createMcqQuestion} from "../util/createMcqQuestion";
 import {loginuser} from "../util/loginuser"
-export default function LoginUser(){
+import { useHistory } from 'react-router-dom';
 
-    useContext(AppContext)
+export default function LoginUser(){
+    const history = useHistory();
+    const [userid, setUserid] = useState('');
+    const [password, setPassword] = useState('');
+    
+
+    const handleLogin = async () => {
+       console.log(userid,password);
+    };
+
+    const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.key === 'Enter') {
+            handleLogin();
+        }
+    };
       return (
           <>
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -70,7 +84,7 @@ export default function LoginUser(){
                               type='text'
                               className='mb-4'
                               placeholder='Enter username..'
-
+                              value={userid} onChange={(e) => setUserid(e.target.value)}
                         />
                     </div>
                   <div className="row px-3">
@@ -79,7 +93,7 @@ export default function LoginUser(){
                               type='password'
                               className='mb-4'
                               placeholder='Enter password..'
-
+                              value={password} onChange={(e) => setPassword(e.target.value)} 
                         />
                     </div>
 
@@ -90,10 +104,16 @@ export default function LoginUser(){
 
                     <div className='row mb-3 px-3'>
 
-              <div
-              className="get-started btn btn-primary btn-lg px-4 me-sm-3 hover:shadow-lg ease-linear transition-all duration-150" >
-                Login
-              </div>
+              <div className="get-started btn btn-primary btn-lg px-4 me-sm-3 hover:shadow-lg ease-linear transition-all duration-150"
+                        onClick={() => {
+                          console.log(userid,password);
+                          localStorage.setItem('token', 'tokenpass-string');
+                          history.push('/');
+                        }
+                      }
+                      >
+                        Login
+                    </div>
 
                     </div>
 
