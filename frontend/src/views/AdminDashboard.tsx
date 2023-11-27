@@ -10,7 +10,9 @@ import { Bar } from 'react-chartjs-2';
 import { fetchQuestionText } from '../util/fetchQuestionText';
 import html2canvas from 'html2canvas'
 import jsPDF from 'jspdf'
-
+import Modal from '../components/Modal'
+import Papa from 'papaparse';
+import { sendEmail } from '../util/sendEmail'
 interface IAnalytics {
   [key: string]: {
     id: number;
@@ -26,6 +28,36 @@ export default function AdminDashboard({ history }: RouteComponentProps) {
 
   const [analytics, setAnalytics] = useState<IAnalytics>();
   const [graph, setGraph] = useState('doughnut');
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  }
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  }
+  const [emails, setEmails] = useState<string[]>([]);
+
+  const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+
+    if (file) {
+      Papa.parse(file, {
+        header: true,
+        complete: (result) => {
+          const emailColumn = result.meta.fields?.[0] || 'email';
+          const parsedEmails = result.data.map((row: any) => row[emailColumn]);
+          setEmails(parsedEmails);
+        },
+      });
+    }
+  };
+
+  const handleSendEmail=async()=>{
+    alert(`Email IDs: ${emails.join(', ')}`);
+    const data = await sendEmail({emaillist:emails})
+  }
   useEffect(() => {
     (async function () {
       const _roomId = localStorage.getItem('roomId');
@@ -271,12 +303,31 @@ if(content){
                       >
                        Download
                     </div>
+                    
                     </div>
-                
+                    <>
+                    <input type="file" accept=".csv" onChange={handleFileUpload} />
+                    {
+                      (emails.length>0?(<div
+                        className="get-started btn btn-primary btn-lg px-4 me-sm-3 hover:shadow-lg ease-linear transition-all duration-150"
+                        onClick={handleSendEmail}
+                      
+                      >
+                       Send link to emails
+                       
+                    </div>):(<></>))
+                    }
+                      <h2>Email IDs:</h2>
+                      <ul>
+                        {emails.map((email, index) => (
+                          <li key={index}>{email}</li>
+                        ))}
+                      </ul>
+                    </>
                 </div>
             </div>
 
-
+            
             <div className="col-lg-6">
                 <div className="card2 card border-0 px-4 py-5">
                     <h2 className="mb-0 mr-4 mt-2">Analytics</h2>
