@@ -1,7 +1,7 @@
 
  <h4> Project 3 Delta Video Link (Google Drive) - https://drive.google.com/file/d/1jGHHcqTKWPWirr6wyCuG_Z8NzzUiUlKF/view?usp=sharing </h4>
 
-
+[Delta3Rubrics](polly/blob/main/Delta3Rubrics/Readme.md)
 <div align="center">
 
 <h1> Hello! Welcome to Poll Me! </h1>
