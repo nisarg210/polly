@@ -1,6 +1,6 @@
 
- <h4> Project 3 Delta Video Link (YouTube) - https://www.youtube.com/watch?v=pZQN-dwlo9k </h4>
- <h4> Project 3 Delta Video Link (File) - https://github.com/KabirSinghBhatia/polly/blob/main/docs/Proj3_Delta_PollMe_Team11.mp4 </h4>
+ <h4> Project 3 Delta Video Link (Google Drive) - https://drive.google.com/file/d/1jGHHcqTKWPWirr6wyCuG_Z8NzzUiUlKF/view?usp=sharing </h4>
+
 
 <div align="center">
 
